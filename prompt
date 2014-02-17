@@ -1,0 +1,37 @@
+Gray="\[\033[1;32m\]"
+Blue="\[\033[0;34m\]"
+Red="\[\033[0;31m\]"
+LightGray="\[\033[1;36m\]"
+White="\[\033[1;37m\]"
+Orange="\[\033[0;33m\]"
+Green="\[\033[0;32m\]"
+Reset="\[\033[0;00m\]"
+
+function current_repo {
+  if [ -d .git ]; then
+    echo "[`pwd | xargs basename`]"
+  fi;
+}
+
+function current_branch {
+  if [ -d .git ]; then
+    local branch=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'`
+    if [ "$branch" != '' ]; then
+      echo " $branch"
+    else
+      echo " (local)"
+    fi
+  fi;
+}
+
+function current_directory {
+  if [ ! -d .git ]; then
+    pwd | sed "s,^`echo $HOME`,~,"
+  fi;
+}
+
+PS1=\
+"$Orange\$(current_repo)"\
+"$Blue\$(current_branch)"\
+"$White\$(current_directory) "\
+"$ $Reset"

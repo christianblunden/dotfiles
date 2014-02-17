@@ -1,0 +1,24 @@
+#!/bin/bash
+
+alias rc="bundle exec rails console"
+alias bi="bundle install"
+alias be="bundle exec"
+alias bu="bundle update"
+alias bo="bundle open"
+alias bc="bundle console"
+alias e='emacs'
+alias :q='exit'
+alias gst='git status'
+
+alias dry='cd ~/Code/drydiary.com'
+alias dot='cd ~/Code/dotfiles'
+alias oto='cd ~/Code/音'
+alias myboxen='cd /opt/boxen/repo'
+alias cov='open reports/coverage/index.html'
+alias git='hub'
+alias gitclean='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+
+alias beer='bundle exec rake'
+alias iossim="open /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/"
+alias gam="git commit -am"
+alias f="fab -f ~/code/uswitch/puppet/fabfile.py"

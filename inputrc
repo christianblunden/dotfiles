@@ -1,0 +1,6 @@
+# Tab
+TAB: menu-complete
+# # Shift-Tab (reverse menu-complete)
+"\e[Z": "\e-1\C-i"
+# Ignores the case of the letter
+set completion-ignore-case on
