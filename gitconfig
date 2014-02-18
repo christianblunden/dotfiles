@@ -14,7 +14,7 @@
   changed = green
   untracked = cyan
 [core]
-    editor = emacs
+    editor = vim
     whitespace = trailing-space,space-before-tab
 [merge]
     mergeoptions = --no-ff
