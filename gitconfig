@@ -40,4 +40,4 @@
 [credential]
 
 [hub]
-protocol = https
+protocol = git
