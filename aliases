@@ -22,3 +22,4 @@ alias beer='bundle exec rake'
 alias iossim="open /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/"
 alias gam="git commit -am"
 alias f="fab -f ~/code/uswitch/puppet/fabfile.py"
+alias fdoc="open https://github.com/uswitch/puppet/blob/master/fabricguide.md"
