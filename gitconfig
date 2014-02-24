@@ -35,7 +35,7 @@
   aa = add -A
   pretty = log --oneline --graph --decorate --all
 [push]
-  default = upstream
+  default = simple
 
 [credential]
 
