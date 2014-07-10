@@ -65,3 +65,4 @@ set cmdheight=2
 set laststatus=2
 set nofoldenable
 
+source ~/.vim/scripts/testing.vim

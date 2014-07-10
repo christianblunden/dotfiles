@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/christianblunden/code/uswitch/comms-web-tracking/src/comms_web_tracking'
+let g:netrw_dirhist_2='/Users/christianblunden/code/uswitch/comms-web-tracking/src/comms_web_tracking/publishers'
+let g:netrw_dirhist_3='/Users/christianblunden/code/comms-dailies/config/upstart'
+let g:netrw_dirhist_4='/Users/christianblunden/code/uswitch/comms-backstage-api/src'
+let g:netrw_dirhist_5='/Users/christianblunden/code/uswitch/comms-backstage-api/src/comms_backstage_api'
+let g:netrw_dirhist_6='/Users/christianblunden/code/dotfiles'
