@@ -1,4 +1,5 @@
 execute pathogen#infect()
+set nocompatible
 syntax on
 filetype plugin indent on
 
@@ -64,5 +65,10 @@ set wildignore+=*.o,*.obj,.bundle,coverage,.DS_Store,_html,.git,*.rbc,*.class,.s
 set cmdheight=2
 set laststatus=2
 set nofoldenable
+
+" Comma for leader
+let mapleader = ","
+let maplocalleader = ","
+let g:mapleader = ","
 
 source ~/.vim/scripts/testing.vim

@@ -2,6 +2,10 @@ function authme {
  ssh $1 'cat >>~/.ssh/authorized_keys' <~/.ssh/id_rsa.pub
 }
 
+setjdk() {
+  export JAVA_HOME=$(/usr/libexec/java_home -v $1)
+}
+
 function gcl {
   git clone git@github.com:$1.git
 }
