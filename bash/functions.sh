@@ -6,6 +6,11 @@ setjdk() {
   export JAVA_HOME=$(/usr/libexec/java_home -v $1)
 }
 
+rvmify() {
+  echo "$1" > .ruby-version
+  echo "$2" > .ruby-gemset
+}
+
 function gcl {
   git clone git@github.com:$1.git
 }
