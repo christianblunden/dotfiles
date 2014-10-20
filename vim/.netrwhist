@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/christianblunden/code/uswitch/comms-backstage-api/manifests/broadband-click'
 let g:netrw_dirhist_2='/Users/christianblunden/code/uswitch/puppet'
 let g:netrw_dirhist_3='/Users/christianblunden/code/uswitch/vpc-setup'
+let g:netrw_dirhist_4='/Users/christianblunden/code/dotfiles'
+let g:netrw_dirhist_5='/Users/christianblunden/code/dotfiles/vim'
+let g:netrw_dirhist_6='/Users/christianblunden/code/dotfiles'

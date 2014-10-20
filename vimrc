@@ -51,7 +51,7 @@ set iskeyword+=_,$,@,%,#,-
 "" Mouse
 set mouse=a
 set mousehide
-set ttymouse=xterm2 
+set ttymouse=xterm2
 
 "" Search
 set hlsearch
@@ -76,6 +76,13 @@ cnoremap <C-f> <Right>
 cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
 
+"" Vim Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 " Comma for leader
 let mapleader = ","
 let maplocalleader = ","
@@ -88,5 +95,11 @@ let g:ctrlp_use_caching = 0
 
 "map <C-f> :Ack<space>""<C-b>
 map <leader>f :Ack<space>""<C-b>
+
+map <leader>1 <Esc>:w<Enter>:bp<Enter>
+map <leader>2 <Esc>:w<Enter>:bn<Enter>
+map <leader>3 :b<space>
+
+command FixTrailingSpaces %s/\s\+$//
 
 source ~/.vim/scripts/testing.vim
