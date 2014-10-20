@@ -7,3 +7,6 @@
 [submodule "vim/bundle/vim-exercism"]
 	path = vim/bundle/vim-exercism
 	url = git@github.com:rsslldnphy/vim-exercism.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git

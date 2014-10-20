@@ -15,6 +15,10 @@ function gcl {
   git clone git@github.com:$1.git
 }
 
+function f() {
+  fab -f ~/code/uswitch/puppet/fabfile.py "$@"
+}
+
 function dead() {
   ssh deploy@$1 -p22 -l ubuntu -i ~/.ssh/uswitch-web-key.pem
 }

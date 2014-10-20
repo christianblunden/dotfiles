@@ -66,9 +66,27 @@ set cmdheight=2
 set laststatus=2
 set nofoldenable
 
+"" Fix EX command movements
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
+
 " Comma for leader
 let mapleader = ","
 let maplocalleader = ","
 let g:mapleader = ","
+
+nmap <leader><space> :CtrlP<CR>
+let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ctrlp_user_command = 'ag %s -l --nogroup --nocolor --column -g ""'
+let g:ctrlp_use_caching = 0
+
+"map <C-f> :Ack<space>""<C-b>
+map <leader>f :Ack<space>""<C-b>
 
 source ~/.vim/scripts/testing.vim

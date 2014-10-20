@@ -16,6 +16,7 @@
 [core]
     editor = vim
     whitespace = trailing-space,space-before-tab
+	excludesfile = /Users/christianblunden/.gitignore_global
 [merge]
     mergeoptions = --no-ff
 [url "git://github.com/"]
