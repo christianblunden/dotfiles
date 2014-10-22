@@ -99,6 +99,7 @@ map <leader>f :Ack<space>""<C-b>
 map <leader>1 <Esc>:w<Enter>:bp<Enter>
 map <leader>2 <Esc>:w<Enter>:bn<Enter>
 map <leader>3 :b<space>
+map <leader>4 <Esc>:w<Enter>:bd<Enter>
 
 command FixTrailingSpaces %s/\s\+$//
 
