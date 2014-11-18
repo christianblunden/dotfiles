@@ -101,6 +101,16 @@ map <leader>2 <Esc>:w<Enter>:bn<Enter>
 map <leader>3 :b<space>
 map <leader>4 <Esc>:w<Enter>:bd<Enter>
 
+" Ctrl-Space now omnicompletes as well
+inoremap <C-Space> <C-x><C-o>
+
+" Rainbow parens
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesActivate
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 command FixTrailingSpaces %s/\s\+$//
 
 source ~/.vim/scripts/testing.vim
