@@ -23,6 +23,10 @@ function dead() {
   ssh deploy@$1 -p22 -l ubuntu -i ~/.ssh/uswitch-web-key.pem
 }
 
+function gitprunelocal() {
+  git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
+}
+
 function qq {
   local repo="$HOME/code/$1"
   local uswitch="$HOME/code/uswitch/$1"

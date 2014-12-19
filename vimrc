@@ -93,16 +93,16 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ctrlp_user_command = 'ag %s -l --nogroup --nocolor --column -g ""'
 let g:ctrlp_use_caching = 0
 
-"map <C-f> :Ack<space>""<C-b>
 map <leader>f :Ack<space>""<C-b>
 
 map <leader>1 <Esc>:w<Enter>:bp<Enter>
 map <leader>2 <Esc>:w<Enter>:bn<Enter>
 map <leader>3 :b<space>
 map <leader>4 <Esc>:w<Enter>:bd<Enter>
+map <leader>d [<C-d>
 
 " Ctrl-Space now omnicompletes as well
-inoremap <C-Space> <C-x><C-o>
+imap <C-space> <C-x><C-o>
 
 " Rainbow parens
 let g:rbpt_loadcmd_toggle = 0

@@ -5,3 +5,5 @@ source ~/.aliases
 source ~/.path
 source ~/.aws
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

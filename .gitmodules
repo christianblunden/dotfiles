@@ -31,3 +31,6 @@
 [submodule "vim/bundle/vim-fireplace"]
 	path = vim/bundle/vim-fireplace
 	url = git://github.com/tpope/vim-fireplace.git
+[submodule "vim/bundle/dockerfile"]
+	path = vim/bundle/dockerfile
+	url = git@github.com:honza/dockerfile.vim.git
