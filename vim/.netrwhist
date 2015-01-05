@@ -1,6 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/christianblunden/code/uswitch/broadband-web/lib/broadband_api'
-let g:netrw_dirhist_2='/Users/christianblunden/code/uswitch/broadband-web/lib/broadband_api/product'
-let g:netrw_dirhist_3='/Users/christianblunden/code/dotfiles'
-let g:netrw_dirhist_4='/Users/christianblunden/code/dotfiles/bash'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/christianblunden/code/uswitch/comms-web/public_html'
+let g:netrw_dirhist_2='/Users/christianblunden/code/uswitch/broadband-api'
+let g:netrw_dirhist_3='/Users/christianblunden/code/uswitch/broadband-api/app'
+let g:netrw_dirhist_4='/Users/christianblunden/code/uswitch/broadband-api/app/presenters'
+let g:netrw_dirhist_5='/Users/christianblunden/code/uswitch/broadband-api/app'
+let g:netrw_dirhist_6='/Users/christianblunden/code/uswitch/broadband-api/app/services'
+let g:netrw_dirhist_7='/Users/christianblunden/code/dotfiles'
+let g:netrw_dirhist_8='/Users/christianblunden/code/dotfiles/bash'

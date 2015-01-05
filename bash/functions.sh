@@ -2,6 +2,10 @@ function authme {
  ssh $1 'cat >>~/.ssh/authorized_keys' <~/.ssh/id_rsa.pub
 }
 
+function emoj {
+  open "http://www.emoji-cheat-sheet.com/"
+}
+
 setjdk() {
   export JAVA_HOME=$(/usr/libexec/java_home -v $1)
 }
