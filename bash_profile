@@ -4,4 +4,6 @@ export GPG_AGENT_INFO_FILE=$HOME/.gpg-agent-info
 gpg-agent --daemon --enable-ssh-support --write-env-file "${GPG_AGENT_INFO_FILE}"
 export GPG_TTY=$(tty)
 
+eval "$(docker-machine env default)"
+
 source ~/.bashrc
