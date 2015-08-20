@@ -15,6 +15,8 @@ rvmify() {
   echo "$2" > .ruby-gemset
 }
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 function gcl {
   git clone git@github.com:$1.git
 }

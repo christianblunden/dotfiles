@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/christianblunden/code/uswitch/broadband-web/config/nginx'
-let g:netrw_dirhist_2='/Users/christianblunden/code/uswitch/broadband-web/config'
-let g:netrw_dirhist_3='/Users/christianblunden/code/uswitch/broadband-zelda'
-let g:netrw_dirhist_4='/Users/christianblunden/code/uswitch/broadband-zelda/app/models/product_summary'
-let g:netrw_dirhist_5='/Users/christianblunden/code/uswitch/broadband-zelda/app/models'
-let g:netrw_dirhist_6='/Users/christianblunden/code/uswitch/broadband-web'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/christianblunden/code/uswitch/broadband-web'
+let g:netrw_dirhist_2='/Users/christianblunden/code/uswitch/broadband-web/app'
+let g:netrw_dirhist_3='/Users/christianblunden/code/uswitch/broadband-web/app/assets'
+let g:netrw_dirhist_4='/Users/christianblunden/code/uswitch/broadband-web/app/assets/javascripts'
+let g:netrw_dirhist_5='/Users/christianblunden/code/uswitch/broadband-web/app/assets/javascripts/components'
+let g:netrw_dirhist_6='/Users/christianblunden/code/uswitch/broadband-web/app/assets/javascripts/components/product_table'
+let g:netrw_dirhist_7='/Users/christianblunden/code/uswitch/broadband-api'
+let g:netrw_dirhist_8='/Users/christianblunden/code/dotfiles'

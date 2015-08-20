@@ -1,0 +1,6 @@
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export KAFKA_HOME=~/code/apache-kafka
+export DEISCTL_TUNNEL=172.17.8.100
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export LEIN_JAVA_CMD=java
+
