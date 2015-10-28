@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/christianblunden/code/uswitch/broadband-autoscaling/configs'
-let g:netrw_dirhist_2='/Users/christianblunden/code/uswitch/broadband-autoscaling/configs/broadband_web'
-let g:netrw_dirhist_3='/Users/christianblunden/code/uswitch/broadband-autoscaling/configs'
-let g:netrw_dirhist_4='/Users/christianblunden/code/uswitch/broadband-autoscaling/configs/broadband_internal'
-let g:netrw_dirhist_5='/Users/christianblunden/code/uswitch/broadband-zelda'
-let g:netrw_dirhist_6='/Users/christianblunden/code/uswitch/broadband-zelda/app'
-let g:netrw_dirhist_7='/Users/christianblunden/code/uswitch/broadband-zelda/app/models'
-let g:netrw_dirhist_8='/Users/christianblunden/code/uswitch/broadband-zelda'
-let g:netrw_dirhist_9='/Users/christianblunden/code/dotfiles'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/christianblunden/code/dotfiles/vim/bundle/vim-airline/plugin'
+let g:netrw_dirhist_2='/Users/christianblunden/code/dotfiles/vim/bundle/vim-airline'
+let g:netrw_dirhist_3='/Users/christianblunden/code/dotfiles/vim/scripts'

@@ -1,134 +1,134 @@
-function! Testing::AlternateFile()
-if Testing::InTestFile() | call Testing::SwitchToFile(Testing::SourceFile())
-else | call Testing::SwitchToFile(Testing::TestFile())
+function! s:AlternateFile()
+if s:InTestFile() | call s:SwitchToFile(s:SourceFile())
+else | call s:SwitchToFile(s:TestFile())
 endif
 endfunction
 
-function! Testing::RunTests(...)
+function! s:RunTests(...)
 :w " write the file
 
 if a:0 | let test_file = a:1
-elseif Testing::InTestFile() | let test_file = Testing::CurrentFile()
+elseif s:InTestFile() | let test_file = s:CurrentFile()
 elseif exists("s:last_run_test") | let test_file = s:last_run_test
-else | let test_file = Testing::TestFile()
+else | let test_file = s:TestFile()
 endif
 
 let s:last_run_test = test_file
 
-if match(test_file, '\.feature$') != -1 | call Testing::RunCuke(test_file)
-elseif filereadable("Gemfile") | call Testing::BundleExecRspec(test_file)
-else | call Testing::RunRspec(test_file)
+if match(test_file, '\.feature$') != -1 | call s:RunCuke(test_file)
+elseif filereadable("Gemfile") | call s:BundleExecRspec(test_file)
+else | call s:RunRspec(test_file)
 endif
 
 endfunction
 
-function! Testing::RunNearestTest()
-call Testing::RunTests(expand("%") . ":" . line("."))
+function! s:RunNearestTest()
+call s:RunTests(expand("%") . ":" . line("."))
 endfunction
 
-function! Testing::RunCuke(filename)
-call Testing::PrintAndRun("bundle exec cucumber --require features --format progress " . a:filename, a:filename)
+function! s:RunCuke(filename)
+call s:PrintAndRun("bundle exec cucumber --require features --format progress " . a:filename, a:filename)
 endfunction
 
-function! Testing::BundleExecRspec(filename)
-call Testing::PrintAndRun("bundle exec rspec " . a:filename, a:filename)
+function! s:BundleExecRspec(filename)
+call s:PrintAndRun("bundle exec rspec " . a:filename, a:filename)
 endfunction
 
-function! Testing::RunRspec(filename)
-call Testing::PrintAndRun("rspec " . a:filename, a:filename)
+function! s:RunRspec(filename)
+call s:PrintAndRun("rspec " . a:filename, a:filename)
 endfunction
 
-function! Testing::PrintAndRun(command, filename)
+function! s:PrintAndRun(command, filename)
 exec ':!echo "*** Running tests in ' . a:filename . ' ***" && ' . a:command
 endfunction
 
-function! Testing::SwitchToFile(filename)
+function! s:SwitchToFile(filename)
 exec ':e ' . a:filename
-if !filereadable(a:filename) | call Testing::MakeDirectory() | endif
+if !filereadable(a:filename) | call s:MakeDirectory() | endif
 endfunction
 
-function! Testing::TestFile()
-let test_file = system("find . -name " . Testing::GenericPath() . "_test* -o -name " . Testing::GenericPath() . "_spec* | xargs basename")
+function! s:TestFile()
+let test_file = system("find . -name " . s:GenericPath() . "_test* -o -name " . s:GenericPath() . "_spec* | xargs basename")
 if filereadable(test_file) | return test_file
-elseif match(Testing::CurrentFile(), '\.rb$') | return Testing::RspecFile()
-elseif match(Testing::CurrentFile(), '\.clj$') | return Testing::MidjeFile()
+elseif match(s:CurrentFile(), '\.rb$') | return s:RspecFile()
+elseif match(s:CurrentFile(), '\.clj$') | return s:MidjeFile()
 endif
 endfunction
 
-function! Testing::SourceFile()
-let source_file = system("find . -name " . Testing::GenericPath() . " ! -name _test.* ! -name _spec.* | xargs basename")
+function! s:SourceFile()
+let source_file = system("find . -name " . s:GenericPath() . " ! -name _test.* ! -name _spec.* | xargs basename")
 if filereadable(source_file) | return source_file
-elseif match(Testing::CurrentFile(), '\.rb$') | return Testing::RubyFile()
-elseif match(Testing::CurrentFile(), '\.clj$') | return Testing::ClojureFile()
+elseif match(s:CurrentFile(), '\.rb$') | return s:RubyFile()
+elseif match(s:CurrentFile(), '\.clj$') | return s:ClojureFile()
 endif
 endfunction
 
-function! Testing::RspecFile()
-return "spec/" . Testing::GenericPath() . "_spec.rb"
+function! s:RspecFile()
+return "spec/" . s:GenericPath() . "_spec.rb"
 endfunction
 
-function! Testing::MidjeFile()
-return "test/" . Testing::GenericPath() . "_test.rb"
+function! s:MidjeFile()
+return "test/" . s:GenericPath() . "_test.rb"
 endfunction
 
-function! Testing::RubyFile()
-if filereadable("app/" . Testing::GenericPath() . ".rb")
-return "app/" . Testing::GenericPath() . ".rb"
+function! s:RubyFile()
+if filereadable("app/" . s:GenericPath() . ".rb")
+return "app/" . s:GenericPath() . ".rb"
 else
-return Testing::GenericPath() . ".rb"
+return s:GenericPath() . ".rb"
 endif
 endfunction
 
-function! Testing::ClojureFile()
-return "src/" . Testing::GenericPath() . ".clj"
+function! s:ClojureFile()
+return "src/" . s:GenericPath() . ".clj"
 endfunction
 
-function! Testing::GenericPath()
+function! s:GenericPath()
 return DoAll([
-\ function("Testing::StripDirPrefix"),
-\ function("Testing::StripPathSuffix"),
-\ function("Testing::StripPathPrefix"),
-\ function("Testing::StripExtension")],
+\ function("s:StripDirPrefix"),
+\ function("s:StripPathSuffix"),
+\ function("s:StripPathPrefix"),
+\ function("s:StripExtension")],
 \ expand("%"))
 endfunction
 
-function! Testing::InTestFile()
-return match(Testing::CurrentFile(), 'test\|spec') != -1
+function! s:InTestFile()
+return match(s:CurrentFile(), 'test\|spec') != -1
 endfunction
 
-function! Testing::CurrentFile()
+function! s:CurrentFile()
 return expand("%")
 endfunction
 
-function! Testing::IgnoredDirs()
+function! s:IgnoredDirs()
 return 'tmp\|cache\|vendor\|target\|build\|dist'
 endfunction
 
-function! Testing::TestDir()
-return Testing::StripNewline(system('find . -type d -name test -o -name spec | grep -v "' . Testing::IgnoredDirs() . '"' ))
+function! s:TestDir()
+return s:StripNewline(system('find . -type d -name test -o -name spec | grep -v "' . s:IgnoredDirs() . '"' ))
 endfunction
 
-function! Testing::StripDirPrefix(path)
+function! s:StripDirPrefix(path)
 return substitute(a:path, '^\(' . system('pwd') . '\|\.\/\)', '', '')
 endfunction
 
-function! Testing::StripPathPrefix(path)
+function! s:StripPathPrefix(path)
 return substitute(a:path, '^\(app\|src\|spec\|test\)\/', '', '')
 endfunction
 
-function! Testing::StripPathSuffix(path)
+function! s:StripPathSuffix(path)
 return substitute(a:path, '_*\(test\|spec\)\.\w*$', '', '')
 endfunction
 
-function! Testing::StripNewline(str)
+function! s:StripNewline(str)
 return substitute(a:str, '\n', '', '')
 endfunction
 
-function! Testing::StripExtension(str)
+function! s:StripExtension(str)
 return substitute(a:str, '\.[^\.]*$', '', '')
 endfunction
 
-function! Testing::MakeDirectory()
+function! s:MakeDirectory()
 call system('mkdir -p ' . expand('%:p:h') )
 if v:shell_error != 0
 echo "Make Directory did not return successfully"
@@ -137,8 +137,8 @@ endfunction
 
 autocmd VimEnter,BufRead,BufNewFile *.rb,*.feature call RubySetup()
 function RubySetup()
-map <leader>, :call Testing::AlternateFile()<cr>
-map <leader>t :call Testing::RunTests()<cr>
-map <leader>T :call Testing::RunNearestTest()<cr>
+map <leader>, :call s:AlternateFile()<cr>
+map <leader>t :call s:RunTests()<cr>
+map <leader>T :call s:RunNearestTest()<cr>
 map <leader>c :!bundle exec cucumber<cr>
 endfunction
