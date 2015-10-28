@@ -31,10 +31,12 @@
   name = Christian Blunden
   email = christian.blunden@gmail.com
 [alias]
+  l = log --pretty=format:'%Cred[%h]%Creset %Cgreen(%cr) %C(cyan)%an: %Creset %s %C(yellow)%d%Creset' --abbrev-commit --date=relative
   co = checkout
   ci = commit -m
   aa = add -A
   pretty = log --oneline --graph --decorate --all
+  smu = !git submodule foreach git checkout master && git submodule foreach git pull
 [push]
   default = simple
 
